@@ -78,7 +78,7 @@
     right:0px;
     width: 100%;
     /* height: 100%; */
-    bottom: -30%;
+    bottom: -35%;
     /* border: 1px solid green; */
     z-index: 5;
   }
@@ -116,7 +116,7 @@
     position: relative;
     height: 700px;
     width: 100%;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
   }
 
 
@@ -137,6 +137,10 @@
     .heroText h1{
       font-size: 2rem !important;
     }
+
+    
+
+
   }
 
   @media (max-width: 850px) {
@@ -168,16 +172,20 @@
 
     .oneImageHolder#mountain{
 
-      bottom: -10px !important;
+      bottom: -50px !important;
     }
 
     .oneImageHolder#user{
       width: 100%;
       display: flex;
+      justify-content: flex-start;
+    }
+    .userImageWrapper{
+      width: 90%;
     }
 
      .userImageWrapper img{
-      height: 80% !important;
+      height: 90% !important;
      }
   }
 
@@ -186,6 +194,11 @@
     .oneImageHolder#user img{
         height: 100%;
     }
+
+     .oneImageHolder#mountain{
+
+    bottom: -80px !important;
+  }
   }
 
   @media (max-width: 1280px) {
@@ -200,7 +213,7 @@
 
     .oneImageHolder#mountain{
 
-    bottom: -20%;
+    bottom: -30%;
   }
   }
   

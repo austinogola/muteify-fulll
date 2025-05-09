@@ -11,8 +11,16 @@ const Hero = () => {
             <h1>
               Watch Videos Without  <br /> Shackles Of Music, Mute  <br /> Music in{" "}
               <span className="highlight">Real-Time</span>
+
+              <p className='straightWaitListParent'>
+                <a href="/waitlist" >Join Waitlist →</a>
+              </p>
             </h1>
             </div>
+
+            {/* <div className='straightWaitListParent'>
+                <button>Join Waitlist</button>
+            </div> */}
 
             <div className='imageWrapper'>
                     <div className='imageParent'>
@@ -34,6 +42,10 @@ const Hero = () => {
                         alt="Man watching video"
                         className="hero-main-image"
                         />
+                    </div>
+
+                    <div className='boundaryDiv'>
+
                     </div>
             
                     </div>

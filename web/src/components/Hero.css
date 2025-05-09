@@ -42,6 +42,25 @@
     color: #ff6600;
   }
 
+  .straightWaitListParent{
+    z-index: 6;
+    text-align: center;
+     display: none;
+    /* border: 1px solid red; */
+  }
+  .straightWaitListParent a{
+    background-color: #ff6401;
+    color: #333;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow:0 0 4px rgba(255, 100, 1, 0.2);
+   
+    
+  }
+
   .imageWrapper{
     /* border: 1px solid blue; */
     height: 600px;
@@ -57,6 +76,17 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+  }
+  .boundaryDiv{
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: -20px;
+    z-index: 10;
+    width: 105%;
+    left:-5px;
+    height: 40px;
+     background: linear-gradient(to bottom,white, white);
+      filter: blur(8px);
   }
 
   .oneImageHolder{
@@ -147,6 +177,13 @@
 
 
   }
+
+   @media (max-width: 768px){
+    .straightWaitListParent{
+      display: block;
+  }
+
+}
 
   @media (max-width: 850px) {
     .heroText{

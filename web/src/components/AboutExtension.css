@@ -24,7 +24,7 @@
 
 .aboutTextWrapper h1{
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
 
   }
@@ -34,366 +34,48 @@
     font-size: 1rem;
   }
 
-  .imagesgrandParent{
+
+  .allImagesParent{
     display: flex;
-    justify-content: center;
-  }
-
-  .imagesParent{
-    position: relative;
-    height: 80vh;
-    width: 80%;
-    /* border: #555 solid 1px; */
-  }
-
-  .oneImageWrapper{
-    position: absolute;
     width: 100%;
-    height: 100%;
-  }
-  .oneImageWrapper#blur{
-    display: flex;
     justify-content: center;
-    align-items:flex-start;
-  }
-  .oneImageWrapper#blur img{
-    width: 60%;
+    /* border: 1px solid red; */
   }
 
-  .oneImageWrapper#ext{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .oneImageWrapper#ext img{
-    width: 60%;
-    position: relative;
-    top: 10vh;
-  }
-
-  .oneImageWrapper#steps{
-    display: flex;
-    justify-content: center;
-    align-items:center !important;
-  }
-
-  .stepsDiv{
-    border: 1px solid red;
-    position: relative;
-    width: 80%;
-    height: 90vh;
-  }
-
-  #tip1{
-    top:180px;
-    left:250px;
-  }
-
-  #tip2{
-    top:220px;
-    right:280px;
-  }
-  #tip3{
-    bottom:100px;
-    left:200px;
-  }
-  #tip4{
-    bottom:100px;
-    right:200px;
-  }
-  .imageContent{
-    display: flex;
-    justify-content: center;
-    width:90%;
-    display: none;
-    /* overflow: hidden; */
-  }
-
-  .imageContentWrapper{
-    width: 95%;
-    position: relative;
-    /* border:1px solid blue; */
-  }
-
-  .imageParent{
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-   
-  }
-
-    .imageParent#forOrangeBlur img{
-        width:80%;
-    }
-
-
-  .imageParent#forExtensionPopup img{
-    width:80%;
-  }
-
-  .imageParent#forTips{
-    /* bottom: 1850px; */
-    border: 1px solid blue;
-    height: 700px;
-    top:100px;
-    /* height:500px; */
-    /* width: 50%; */
-  }
-
- 
- 
   @media (max-width: 480px) {
-    #tip1{
-      top:80px !important;
-      left: 10px  !important;
-    }
-    .aboutTextWrapper h1{
-        font-weight: 400;
-        font-size: 2rem;
-        margin-bottom: 15px;
-      }
 
-     
-
-      .aboutTextWrapper{
-        text-align: center;
-        width:400px;
-        color: #555;
-    }
-    .aboutTextWrapper p{
-        font-size: 0.8rem;
-        margin-bottom: 15px;
-      }
-
-      .imageContentWrapper{
-        width: 95%;
-        position: relative;
-      }
-    
-      .imageParent{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
-
-      .imageParent#forTips{
-       
-        max-height: 300px;
-        top:0px !important;
-      }
-
-      #tip1{
-
-      }
-
-      #tip1,#tip2,#tip3{
-        top:100px
-      }
-    
-  }
- 
-@media (max-width: 640px) {
-  #tip1{
-    top:100px !important;
-    left: 50px  !important;
   }
 
-  #tip3{
-    bottom:90px !important;
-    left:0px !important;
-  }
-  .imagesParent{
-    position: relative;
-    height: 50vh;
-    width: 80%;
+
+  @media (max-width: 680px) {
+
   }
 
-  .oneImageWrapper#ext img{
-    width: 60%;
-    position: relative;
-    top: 0vh;
-  }
+  @media (max-width: 780px) {
 
-    .aboutTextWrapper h1{
-        font-weight: 400;
-        font-size: 2rem;
-        margin-bottom: 15px;
-      }
-
-      .aboutTextWrapper{
-        text-align: center;
-        width:550px;
-        color: #555;
-    } 
-
-    .aboutTextWrapper p{
-        font-size: 0.8rem;
-        margin-bottom: 15px;
-      }
-
-      .imageContentWrapper{
-        width: 90%;
-        position: relative;
-      }
-    
-      .imageParent{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
-      .imageParent#forTips{
-       
-        max-height: 300px;
-        top:30px !important;
-      }
-  }
-
-  
-  /* Medium devices (tablets, ≤768px) */
-  @media (max-width: 768px) {
-      
-    #tip1{
-      top:20px !important;
-      left: 50px  !important;
-    }
-
-    .oneImageWrapper > img{
+    .aboutTextWrapper{
       width: 80%;
     }
-
-    
-    .imageContentWrapper{
-        width: 85%;
-        position: relative;
-      }
-    
-      .imageParent{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
-
-      .imageParent#forOrangeBlur img{
-        width:100%;
-        }
-
-        .imageParent#forExtensionPopup img{
-            width:100%;
-          }
-
-          .imageParent#forTips{
-       
-            max-height: 400px;
-            top:80px !important;
-           
-          }
-  }
-
-  @media (max-width: 960px){
-    
-    #tip1{
-      top:120px !important;
-      left: 80px  !important;
+    .aboutTextWrapper h1{
+      font-size: 2rem;
     }
 
-  
-    .imageContentWrapper{
-        width: 75%;
-        position: relative;
-      }
-    
-      .imageParent{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
 
-      .imageParent#forOrangeBlur img{
-        width:100%;
-    }
 
-    .imageParent#forTips{
-       
-        height: 500px;
-        top:30px;
-      }
-    
-  }
-  
-  /* Large devices (laptops, ≤1024px) */
-  @media (max-width: 1024px) {
-    .imageContentWrapper{
-        width: 75%;
-        position: relative;
-      }
-
-     
-    
-      .imageParent{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
-
-      .imageParent#forOrangeBlur img{
-        width:100%;
-    }
-
-    .imageParent#forTips{
-       
-        height: 550px;
-        top:50px;
-      }
-    
-  }
-  
-  /* Extra large devices (desktops, ≤1280px) */
-  @media (max-width: 1280px) {
-    #tip1{
-      top:150px;
-      left: 130px;
-    }
-
-    .imageContentWrapper{
-        width: 70%;
-        position: relative;
-      }
-    
-      .imageParent{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
-
-      .imageParent#forOrangeBlur img{
-        width:100%;
+     .aboutTextWrapper p{
+        font-size: 0.8rem;
      }
+  }
 
-     .imageParent#forTips{
-        /* bottom: 1850px; */
-        height: 650px;
-        top:80px;
-        /* height:500px; */
-        /* width: 50%; */
-      }
+    @media (max-width: 880px) {
+    
+  }
+
+    @media (max-width: 1080px) {
+    
+  }
+
+
+    @media (max-width: 1280px) {
+    
   }

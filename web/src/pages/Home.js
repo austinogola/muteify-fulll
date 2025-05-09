@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <section>
       <Intro/>
+      <AboutExtension/>
       
       {/* 
 
@@ -23,7 +24,7 @@ export default function Home() {
 
        
       
-<AboutExtension/>
+
       <HowItWorks/> 
       <HowToUse/>
       <PlanPricing/>

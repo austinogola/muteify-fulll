@@ -104,5 +104,9 @@
     .nav-links.open {
       display: flex;
     }
+
+    .get-extension{
+      display: none;
+    }
   }
   

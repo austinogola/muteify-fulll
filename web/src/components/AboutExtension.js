@@ -28,17 +28,18 @@ export default function AboutExtension() {
 
         <div className="aboutText">
             <div className="aboutTextWrapper">
-                <h1>About Extension</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis cursus venenatis. </p>
-                <p>
-                Vivamus nec nisi sit amet leo laoreet viverra. Sed quam risus, lobortis id lorem in, porta suscipit magna. 
-                </p>
+                <h1>AI Powered Extension</h1>
+                <p>Mutify is a one of a kind extension that allows you to enjoy videos without the distraction of haram sound elemants. Whether you're watching YouTube, a social media video, or an online course, our AI technology detects and mutes background music in real time while preserving essential sounds like speech and effects allowing you to have a clean experience from music </p>
             </div>
             
         </div>
 
+        <div className="allImagesParent">
 
-        <div className="imagesgrandParent">
+        </div>
+
+
+        <div className="imagesgrandParent" style={{display:'none'}}>
              <div className="imagesParent">
                     <div className="oneImageWrapper" id='blur'>
                              <img src={orangeBlur}/>
@@ -61,40 +62,7 @@ export default function AboutExtension() {
         </div>
 
         
-
-        <div className="imageContent">
-            <div className="imageContentWrapper">
-
-
-                <div className="imageParent" id='forOrangeBlur'>
-                        <img src={orangeBlur}/>
-                </div>
-
-                <div className="imageParent" id='forExtensionPopup'>
-                        <img src={extensionPopup}/>
-                </div>
-
-               
-
-           
-
-                {/* <div className="imageParent" id='forTips' >
-                  
-                    <div style={{position:'relative',height:'100%',width:'100%'}}>
-                        
-
-                        <SmallTip src={mic} txt='2k Users' right='15%' top='5%' imgWidth='60%'  id='tip2'/>
-
-                      
-
-                        
-                    </div>
-                    
-                    
-                </div>  */}
-
-            </div>
-        </div>
+       
 
        
 

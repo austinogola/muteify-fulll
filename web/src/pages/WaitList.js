@@ -9,7 +9,7 @@ export default function Waitlist() {
     e.preventDefault();
   
     try {
-      await fetch('http://127.0.0.1:5000/submit-email', {
+      await fetch('https://muteify-auth-server-production.up.railway.app/submit-email', {
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: {

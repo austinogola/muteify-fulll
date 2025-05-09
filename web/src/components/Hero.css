@@ -133,12 +133,17 @@
     z-index: 5;
   }
 
-  @media (max-width: 550px) {
+   @media (max-width: 480px) {
+      .oneImageHolder#user img{
+        height: 80% !important;
+    }
+   }
+
+
+  @media (max-width: 560px) {
     .heroText h1{
       font-size: 2rem !important;
     }
-
-    
 
 
   }

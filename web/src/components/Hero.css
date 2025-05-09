@@ -1,0 +1,183 @@
+
+.Hero{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    /* height: 1000px; */
+}
+
+.heroWrapper{
+    position: relative;
+    width: 100%;
+}
+
+.heroText{
+    /* border: 1px solid red; */
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    z-index: 12;
+    /* width: 50%; */
+    /* left: 50%; */
+    /* text-align: end; */
+    /* right: 0px; */
+    
+}
+.heroText h1{
+    font-weight: 400;
+    padding: 10px 20px;
+    color: #333;
+    /* letter-spacing: 4%; */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+    
+.heroWrapper>div{
+    position: absolute;
+    width: 100%;
+}
+
+.highlight {
+    color: #ff6600;
+  }
+
+  .imageWrapper{
+    /* border: 1px solid blue; */
+    height: 600px;
+    background: linear-gradient(
+      10deg,       /* angle */
+      #ff6600 50%,  /* top-left color */
+      white 50%   /* bottom-right color */
+    );
+
+  }
+  .imageParent{
+    /* border: 1px solid pink; */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .oneImageHolder{
+    position: absolute;
+    /* bottom: -100px; */
+  }
+  .oneImageHolder#person{
+    left:0px;
+    width: 60%;
+    height: 100%;
+    /* border: 1px solid yellow; */
+    z-index: 10;
+    bottom: 0px;
+  }
+
+
+  .oneImageHolder#mountain{
+    right:0px;
+    width: 100%;
+    height: 100%;
+    bottom: -250px;
+    /* border: 1px solid green; */
+    z-index: 5;
+  }
+  .oneImageHolder > img{
+    object-fit: contain;
+    /* width: 100px; */
+  }
+
+  .oneImageHolder#person img{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+    position: absolute;
+    left: 0px;
+    object-fit: fill;
+  }
+  .oneImageHolder#mountain img{
+    width: 100%;
+    height: 100%;
+  }
+  .heroImages{
+    /* border: 1px solid red; */
+    height: 700px;
+    width: 100%;
+  }
+
+  .heroImagesWrapper{
+    position: relative;
+    height: 700px;
+    width: 100%;
+    border: 1px solid pink;
+  }
+
+
+ 
+  .heroImages img{
+    object-fit: contain;
+    /* border: 1px solid red; */
+  }
+
+  .indImageHolder#mountain{
+    right: 0px;
+    height: 50px;
+    width: 100%;
+    z-index: 5;
+  }
+
+  @media (max-width: 550px) {
+    .heroText h1{
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .heroText{
+      justify-content: center;
+    }
+
+    .heroText h1{
+      font-weight: 400;
+      padding: 10px 20px;
+      color: #333;
+      /* letter-spacing: 4%; */
+      font-size: 2.5rem;
+      margin-right: 0px;
+      text-align: center;
+  }
+
+    .oneImageHolder#person{
+      left:0px;
+      width: 100% !important;
+      height: 80%;
+      /* border: 1px solid yellow; */
+      z-index: 10;
+      bottom: -100px !important;
+      /* bottom: -100px  !important; */
+      /* right: 50%; */
+    }
+
+    .oneImageHolder#person img{
+      /* width: 100%;
+      height: 100%; */
+      /* border: 1px solid green; */
+      /* position: absolute;
+      left: 0px;
+      bottom: 0px;
+      object-fit: contain; */
+    }
+  }
+
+
+  @media (max-width: 1280px) {
+    .oneImageHolder#person{
+      left:0px;
+      width: 70%;
+      height: 100%;
+      /* border: 1px solid yellow; */
+      z-index: 10;
+      bottom: 0px;
+    }
+  }
+  
+  

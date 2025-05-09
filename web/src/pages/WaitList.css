@@ -1,0 +1,61 @@
+.waitlist-container {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: radial-gradient(circle at bottom right, #fdf1eb 0%, white 60%, #fdf1eb 100%);
+  }
+  
+  .waitlist-content {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .waitlist-content h2 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+  }
+  
+  .waitlist-content p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  
+  .waitlist-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .waitlist-form input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .waitlist-form button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .waitlist-form button:hover {
+    background-color: darkorange;
+  }
+  
+  .waitlist-success {
+    color: green;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+  }
+  

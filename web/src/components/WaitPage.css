@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 300px;
+    padding: 20px 10px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #ff6600;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .subtext {
+    font-size: 14px;
+    color: gray;
+    margin: 0 15px 25px;
+  }
+  
+  .waitlist-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .waitlist-form input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .waitlist-form button {
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    transition: background-color 0.3s;
+  }
+  
+  .waitlist-form button:hover {
+    background-color: #e65c00;
+  }
+  
+  .terms {
+    font-size: 11px;
+    color: gray;
+    padding: 0 20px;
+  }
+  
+  .link {
+    color: #ff6600;
+    text-decoration: none;
+  }
+  

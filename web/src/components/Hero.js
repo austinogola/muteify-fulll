@@ -1,6 +1,6 @@
 import './Hero.css';
-import person from '../images/pers2.png'
-import mountain from '../images/mount2.png'
+import person from '../images/personMain.png'
+import mountain from '../images/mountFull.png'
 
 
 const Hero = () => {
@@ -17,12 +17,15 @@ const Hero = () => {
             <div className='imageWrapper'>
                     <div className='imageParent'>
 
-                        <div className='oneImageHolder' id='person'>
-                            <img
-                            src={person}
-                            alt="Man watching video"
-                            className="hero-main-image"
-                            />
+                        <div className='oneImageHolder' id='user'>
+                            <div className='userImageWrapper'>
+                                        <img
+                                    src={person}
+                                    alt="Man watching video"
+                                    className="hero-main-image"
+                                    />
+                            </div>
+                            
                         </div>
 
                         <div className='oneImageHolder' id='mountain'>

@@ -41,6 +41,9 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    /* border: 1px solid red; */
+    /* background-color: black; */
+    z-index: 20 !important;
   }
   
   .nav-links a {

@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
+      <div className="navbar-container" >
         <div className="logo">
           <img src={fullLogo} alt="Muteify Logo" />
         </div>

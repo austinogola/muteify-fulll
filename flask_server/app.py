@@ -11,6 +11,7 @@ from flask_bcrypt import Bcrypt
 from google.oauth2 import id_token
 from google.auth.transport import requests
 import requests as req
+import json
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -24,17 +25,27 @@ GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 
 
+json_data = os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON')
+if not json_data:
+    raise Exception("Service account JSON not found in environment")
+
+creds_dict = json.loads(json_data)
 
 # Google Sheets setup
 SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 # 
-CREDS_FILE = "creds.json"  # Your downloaded service account key
+# CREDS_FILE = "creds.json"  # Your downloaded service account key
+
+
+        
 SPREADSHEET_NAME = "Muteify Email List"  # Your Google Sheet name
 
 SPREADSHEET_ID = 0
 
+
+
 # Authorize gspread
-creds = ServiceAccountCredentials.from_json_keyfile_name(CREDS_FILE, SCOPE)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
 client = gspread.authorize(creds)
 sheet = client.open(SPREADSHEET_NAME).sheet1  # Access the first sheet
 

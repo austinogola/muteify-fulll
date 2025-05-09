@@ -12,10 +12,10 @@ export default function HowToUse() {
       <div className="useText">
             <div className="useTextWrapper">
                 <h1>How To Use</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis cursus venenatis. </p>
+                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis cursus venenatis. </p>
                 <p>
                 Vivamus nec nisi sit amet leo laoreet viverra. Sed quam risus, lobortis id lorem in, porta suscipit magna. 
-                </p>
+                </p> */}
             </div>
             
         </div>

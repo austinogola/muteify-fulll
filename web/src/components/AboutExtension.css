@@ -3,7 +3,7 @@
     position: relative;
     top: 600px;
     margin-bottom: 20px;
-}
+   
 
 .aboutText{
     font-family: "Readex Pro", sans-serif;
@@ -39,18 +39,313 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    /* border: 1px solid red; */
+    
+   
   }
+
+  .allImagesDiv{
+    width: 80%;
+     /* border: 1px solid red; */
+     position: relative;
+  }
+
+  .imageHolder{
+    position: absolute;
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+     /* border: 1px solid red; */
+}
+
+  }
+
+  .imageHolder img{
+    object-fit: contain;
+    width: 50%;
+  }
+
+  .imageHolder#extPopup {
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: center;
+  }
+
+  .imageHolder#extPopup > img{
+      /* width: 50%; */
+  }
+
+  .extImgHolder{
+    width: 50%;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .extImgHolder img{
+      width: 100%;
+  }
+
+
+  .imageHolder#steps{
+    /* border: 1px solid green; */
+    height: 80px;
+    position: relative;
+  }
+
+  .smallTip{
+    position: absolute;
+    padding:8px;
+   
+  }
+
+  .smallTip p{
+    font-size: 0.8rem;
+  }
+ 
+ 
+
+.smallTip{
+      padding: 6px;
+    }
+  .smallTip img{
+  width: 50%;
+}
+
+.smallTip > span{
+  width:50px;
+}
+
+#tip1{
+    left: -10%;
+    top: 10%;
+    padding-left: 0;
+    /* border: #555 solid 1px; */
+  }
+  #tip1 img{
+    width: 50%;
+
+  }
+  #tip2 img{
+    width: 100%;
+  }
+  #tip3 img{
+    width: 65%;
+  }
+  
+  #tip4 img{
+    width: 40%;
+  }
+
+ 
+
+
+  #tip2{
+    right: -10%;
+    top: 15%;
+  }
+  #tip2 span{
+    /* height: 50px; */
+    /* border: 1px solid red; */
+    /* width: fit-content; */
+    width: 80px !important;
+  }
+  #tip2 img{
+    width: 100%;
+  }
+
+   #tip3{
+    left: -10%;
+    top: 40%;
+  }
+
+   #tip4{
+    right: -3%;
+    top: 42%;
+  }
+  
+
+  
+
+@media (max-width: 1280px) {
+       .imageHolder#steps{
+        height: 50px;
+       }
+
+       #tip1{
+          left: -15%;
+          top: 10%;
+        }
+
+        #tip2{
+          right: -12%;
+          top: 12%;
+        }
+
+        #tip3{
+        left: -15%;
+      }
+
+  }
+
+  @media (max-width: 1080px) {
+    #tip2{
+          right: -18%;
+          top: 12%;
+        }
+
+
+         #tip3{
+        left: -20%;
+      }
+
+      #tip4{
+      right: -8%;
+      top: 42%;
+  }
+  }
+
+
+   @media (max-width: 880px) {
+        /* .smallTip#tip1{
+        top: 30% !important;
+        left:0px !important;
+      } */
+
+      .imageHolder#steps{
+        height: 20px !important;
+       }
+
+       #tip1{
+          left: -30%;
+          top: 7%;
+        }
+
+        #tip2{
+          right: -30%;
+          top: 12%;
+        }
+
+         #tip3{
+        left: -35%;
+      }
+
+      #tip4{
+      right: -12%;
+      top: 42%;
+    }
+    .smallTip > span{
+      width:40px;
+    }
+            
+
+    }
+
+    @media (max-width: 760px) {
+         #tip2{
+          right: -40%;
+          top: 12%;
+        }
+
+        #tip4{
+    right: -15%;
+    top: 42%;
+  }
+
+  .smallTip > span{
+  width:30px;
+}
+ 
+
+ 
+    }
+
+     @media (max-width: 680px) {
+    .allImagesDiv{
+      width: 90%;
+    }
+
+    .smallTip p{
+    font-size: 0.6rem;
+  }
+ 
+
+.smallTip{
+      padding: 5px;
+    }
+  .smallTip img{
+  width: 30%;
+}
+
+    
+       #tip1{
+          left: -40%;
+          top: 10%;
+        }
+
+        #tip2{
+          right: -40%;
+          top: 15%;
+        }
+
+        #tip4{
+    right: -20%;
+    top: 42%;
+  }
+ 
+
+
+  }
+
 
   @media (max-width: 480px) {
 
+      .imageHolder > img{
+        object-fit: contain;
+        width: 100%;
+      }
+
+      #tip1{
+          left: -50%;
+          top: 10%;
+        }
+
+       #tip2{
+          right: -50%;
+          top: 27%;
+        }
+
+         #tip3{
+        left: -60%;
+      }
+
+
+           #tip4{
+        right: -20%;
+        top: 50%;
+      }
+      /* .smallTip{
+        padding: 5px;
+      }
+       .smallTip img{
+        width: 30%;
+      }
+      .smallTip p{
+      font-size: 0.5rem;
+    }
+
+     #tip1{
+        left: 0px !important;
+      } */
+
+      /* #tip1{
+        position: absolute;
+        left:0px !important;
+    } */
   }
 
 
-  @media (max-width: 680px) {
-
-  }
-
+ 
   @media (max-width: 780px) {
 
     .aboutTextWrapper{
@@ -61,21 +356,47 @@
     }
 
 
-
      .aboutTextWrapper p{
         font-size: 0.8rem;
      }
+
+     .imageHolder > img{
+        object-fit: contain;
+        width: 70%;
+      }
+
+
+      /* .smallTip{
+        padding: 6px;
+      }
+       .smallTip img{
+        width: 40%;
+      }
+      .smallTip p{
+      font-size: 0.6rem;
+    }
+
+     #tip1{
+        left: 30px !important;
+      } */
+
   }
 
     @media (max-width: 880px) {
-    
-  }
+        /* .smallTip#tip1{
+        top: 30% !important;
+        left:0px !important;
+      } */
 
-    @media (max-width: 1080px) {
-    
-  }
+      .imageHolder#steps{
+        height: 20px !important;
+       }
+
+       
+
+    }
+
+   
 
 
-    @media (max-width: 1280px) {
     
-  }

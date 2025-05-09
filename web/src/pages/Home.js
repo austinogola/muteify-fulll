@@ -17,6 +17,10 @@ export default function Home() {
     <section>
       <Intro/>
       <AboutExtension/>
+
+      <HowItWorks/> 
+
+      {/* <HowToUse/> */}
       
       {/* 
 
@@ -25,8 +29,8 @@ export default function Home() {
        
       
 
-      <HowItWorks/> 
-      <HowToUse/>
+      
+      
       <PlanPricing/>
       <UserReviews/>
       

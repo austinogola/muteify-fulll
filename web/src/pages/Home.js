@@ -20,22 +20,13 @@ export default function Home() {
 
       <HowItWorks/> 
 
-      {/* <HowToUse/> */}
-      
-      {/* 
+      <HowToUse/>
 
+       <PlanPricing/>
 
-
-       
+       <UserReviews/>
       
-
-      
-      
-      <PlanPricing/>
-      <UserReviews/>
-      
-     
-      <LastSection/>  */}
+      <LastSection/> 
 
     </section>
   

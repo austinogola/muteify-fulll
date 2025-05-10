@@ -22,20 +22,51 @@ export default function PlanPricing() {
       <div className="planText">
             <div className="planTextWrapper">
                 <h1>Plan & Pricing</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis cursus venenatis. </p>
-                <p>
-                Vivamus nec nisi sit amet leo laoreet viverra. 
-                </p>
+
+                <p>Try the world’s first AI Powered technology for just £1 ( Limited Time Offer ).</p>
+        <p>Get unlimited access to all Mutify features, with priority support and extended usage with the following plans</p>
             </div>
             
         </div>
 
-
-        <div className="pricing-section">
-      <div className="pricing-header">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Vivamus nec nisi sit amet leo laoreet viverra.</p>
+        <div className="plans">
+        <div className="plan basic">
+          <h2>Basic</h2>
+          <p className="price">
+            <span className="currency">£</span>6.99<span className="monthly">/Month</span>
+          </p>
+          <div className="tryBtnParent">
+              <button className="try-btn">Try For £1</button>
+          </div>
+          <div className="features">
+            <p className="available"><span className='tick'>✔</span> 45 Minutes Of Usage / Day</p>
+            <p className="available"><span className='tick'>✔</span> Email Support</p>
+            <p className="unavailable"><span className='mark'>✖</span> Hitlist Tracking</p>
+            <p className="unavailable"><span className='mark'>✖</span> Early Access To New Features</p>
+          </div>
+        </div>
+        <div className="plan premium">
+          <div className="badge">Most Popular</div>
+          <h2>Premium</h2>
+          <p className="price">
+            <span className="currency">£</span>11.9<span className="monthly">/Month</span>
+          </p>
+          <div className="tryBtnParent">
+              <button className="try-btn">Try For £1</button>
+          </div>
+          
+          <div className="features">
+            <p className="available"><span className='tick'>✔</span> Unlimited Usage / Day</p>
+            <p className="available"><span className='tick'>✔</span> 50+ Hitlist Tracking</p>
+            <p className="available"><span className='tick'>✔</span> Exclusive Community Access ( Lectures & Events )</p>
+            <p className="available"><span className='tick'>✔</span> 24/7 Live Support</p>
+            <p className="available"><span className='tick'>✔</span> Early Access To New Features</p>
+          </div>
+        </div>
       </div>
+
+
+        {false?<div className="pricing-section">
       <div className="pricing-cards">
         {/* Basic */}
         <div className="card basic">
@@ -86,7 +117,7 @@ export default function PlanPricing() {
           </ul>
         </div>
       </div>
-    </div>
+    </div> :null}
 
         
       

@@ -1,8 +1,9 @@
 .HowItWorks{
-    position:relative ;
-    top: 1400px;
+    /* position:relative ;
+    top: 1700px; */
     margin-bottom: 50px;
     padding-bottom: 50px;
+    overflow: hidden;
 }
 
 .worksText{
@@ -54,7 +55,7 @@
   .steps {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-top: 3rem;
     flex-wrap: wrap;
     gap: 2rem;
@@ -68,6 +69,9 @@
     max-width: 200px;
     flex: 1;
     min-width: 120px;
+    /* border:1px solid red; */
+    position: relative;
+    padding-bottom:30px ;
   }
   
   .circle {
@@ -75,14 +79,15 @@
     color: black;
     font-weight: bold;
     font-size: 1.5rem;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0.8rem;
     text-align: center;
+    font-family: "Bebas Neue", sans-serif;
   }
   
   .step-title {
@@ -94,29 +99,39 @@
   
   .step-number {
     color: #ddd;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+    font-family: "Bebas Neue", sans-serif;
   }
   
   .arrow {
-    position: absolute;
+    /* position: absolute;
     right: -30px;
-    top: 24px;
-    font-size: 1.5rem;
+    top: 24px; */
+    position: absolute;
+    top: 0px;
+    left: 100%;
+
+    /* bottom :80px; */
+    /* left:70px; */
+    font-size: 2.5rem;
     color: #333;
+    
   }
 
   @media (max-width: 1280) {
     .HowItWorks{
-        position:relative ;
-        top: 800px;
+        /* position:relative ;
+        top: 800px; */
     }
   }
 
    @media (max-width: 1080) {
       .HowItWorks{
-        position:relative ;
-        top: 700px;
+        /* position:relative ;
+        top: 700px; */
     }
   } 
   
@@ -124,12 +139,21 @@
     .steps {
       flex-direction: column;
       gap: 2.5rem;
+      align-items: center;
     }
   
     .arrow {
-      position: static;
+      /* position: static; */
       transform: rotate(90deg);
       margin-top: 1rem;
+      top: 0px;
+    }
+    .step{
+      padding-bottom:0px ;
+    }
+
+    .step-number {
+      display: none;
     }
   }
   
@@ -137,7 +161,7 @@
 
     .HowItWorks{
         /* position:relative ; */
-        top: 1100px;
+        /* top: 1100px; */
     }
 
     .worksTextWrapper h1{
@@ -173,8 +197,8 @@
   }
     @media (max-width: 680px) {
        .HowItWorks{
-        position:relative ;
-        top: 1000px;
+        /* position:relative ;
+        top: 1000px; */
     }
    
   }
@@ -182,12 +206,20 @@
    @media (max-width: 480px) {
     
       .HowItWorks{
-        position:relative ;
-        top: 900px;
+        /* position:relative ;
+        top: 900px; */
     }
 
   }
   
  
+    @media (min-width: 1520px) {
+          .HowItWorks{
+        /* position:relative ;
+        top: 1650px; */
+    }
+     }
+     
+
 
   

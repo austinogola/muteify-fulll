@@ -4,7 +4,7 @@
     background: white;
     font-family: sans-serif;
     position: relative;
-    top: 1200px;
+    /* top: 1200px; */
   }
   
   .reviews-header h2 {
@@ -36,10 +36,20 @@
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease;
+   
+   
+  }
+  .cardOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+      z-index: 1;
+       background-color: rgba(0, 0, 0, 0.5);
   }
   
   .review-card:hover {
     transform: translateY(-5px);
+    border: 1px solid #ff7a00;
   }
   
   .card-image {
@@ -54,16 +64,20 @@
     justify-content: flex-end;
     border-radius: 12px;
   }
+
+  .card-image p, .card-image .quote{
+    z-index: 3;
+  }
   
   .review-card .quote {
-    font-size: 2rem;
+    font-size: 5rem;
     color: #ff7a00;
     margin-bottom: 0.5rem;
     font-weight: bold;
   }
   
   .review-card p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: left;
     color: #fff;
   }
@@ -89,7 +103,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #ff7a00;
+    /* border: 1px solid #ff7a00; */
     height: 420px;
   }
   
@@ -146,7 +160,7 @@
     }
   
     .review-card {
-      width: 90%;
+      width: 50%;
     }
   
     .reviews-header h2 {
@@ -155,6 +169,18 @@
   
     .card-image {
       height: 400px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .review-card {
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .review-card {
+      width: 80%;
     }
   }
   

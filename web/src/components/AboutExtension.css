@@ -1,9 +1,15 @@
 .AboutExtension{
     margin-top: 50px;
-    position: relative;
-    top: 600px;
+    /* position: relative; */
+    /* top: 600px; */
     margin-bottom: 20px;
-   
+    height: 65vw;
+}
+
+.aboutExtWrapper{
+   /* border: 1px solid blue; */
+   height: 90%;
+}
 
 .aboutText{
     font-family: "Readex Pro", sans-serif;
@@ -39,6 +45,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    /* border: 1px solid pink; */
+    height: 100%;
     
    
   }
@@ -57,8 +65,7 @@
     justify-content: center;
      /* border: 1px solid red; */
 }
-
-  }
+  
 
   .imageHolder img{
     object-fit: contain;
@@ -189,6 +196,9 @@
   }
 
   @media (max-width: 1080px) {
+    .AboutExtension{
+      height: 75vw;
+    }
     #tip2{
           right: -18%;
           top: 12%;
@@ -242,6 +252,10 @@
     }
 
     @media (max-width: 760px) {
+
+      .AboutExtension{
+      height: 85vh;
+    }
          #tip2{
           right: -40%;
           top: 12%;
@@ -261,6 +275,10 @@
     }
 
      @media (max-width: 680px) {
+
+      .AboutExtension{
+      height: 90vh;
+    }
     .allImagesDiv{
       width: 90%;
     }
@@ -299,6 +317,22 @@
 
 
   @media (max-width: 480px) {
+
+    .AboutExtension{
+      height: 80vh;
+    }
+
+    .aboutTextWrapper h1{
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 15px;
+
+  }
+
+  .aboutTextWrapper p{
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
 
       .imageHolder > img{
         object-fit: contain;
@@ -345,6 +379,13 @@
   }
 
 
+  @media (max-width: 380px) {
+
+    .AboutExtension{
+      height: 150vw;
+    }
+
+  }
  
   @media (max-width: 780px) {
 
@@ -396,6 +437,7 @@
 
     }
 
+   
    
 
 

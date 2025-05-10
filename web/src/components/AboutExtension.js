@@ -23,9 +23,13 @@ function SmallTip ({txt,top,right,left,bottom,src,id}){
     )
 }
 export default function AboutExtension() {
+    console.log(window.innerWidth)
   return (
     <section className="AboutExtension" id='AboutExtension' >
 
+        <div className="aboutExtWrapper">
+
+      
         <div className="aboutText">
             <div className="aboutTextWrapper">
                 <h1>AI Powered Extension</h1>
@@ -61,28 +65,7 @@ export default function AboutExtension() {
             </div>
         </div>
 
-
-        <div className="imagesgrandParent" style={{display:'none'}}>
-             <div className="imagesParent">
-                    <div className="oneImageWrapper" id='blur'>
-                             <img src={orangeBlur}/>
-                    </div>
-
-                    <div className="oneImageWrapper" id='ext'>
-                             <img src={extensionPopup} />
-                             
-                    </div>
-
-                    <div className="oneImageWrapper" id='steps'>
-                                <div className="stepsDiv">
-                                    <SmallTip src={music} txt='100% Real Time Music Blocker' left='10%' top='2%' imgWidth='75%' id='tip1'  />
-                                    <SmallTip src={users} txt='2k Users' right='15%' top='5%' imgWidth='160%'  id='tip2'/>
-                                    <SmallTip src={guitar} txt='Block All Instrumentals' left='60px' top='45%' imgWidth='80%' id='tip3'/>
-                                    <SmallTip src={mic} txt='Only Allow Vocals' right='160px' bottom='22%' imgWidth='50%' id='tip4'/>
-                                </div>
-                    </div>
-            </div>
-        </div>
+          </div>
 
         
        

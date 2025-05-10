@@ -29,13 +29,13 @@ export default function HowItWorks() {
             
         </div>
 
-        <div className="steps">
+        <div className="steps" >
         {steps.map((step, index) => (
-          <div className="step" key={index}>
+          <div className="step" key={index} >
             <div className="circle">{step.number}</div>
             <p className="step-title">{step.title}</p>
             <p className="step-number">0{step.number}</p>
-            {/* {index < steps.length - 1 && <div className="arrow">→</div>} */}
+            {index < steps.length -1 ? <div className="arrow">→</div>:null }
           </div>
         ))}
       </div>

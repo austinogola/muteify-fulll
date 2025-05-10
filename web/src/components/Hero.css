@@ -3,12 +3,13 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    /* height: 1000px; */
+    height: 90vh;
 }
 
 .heroWrapper{
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .heroText{
@@ -84,7 +85,7 @@
     z-index: 10;
     width: 105%;
     left:-5px;
-    height: 40px;
+    height: 80px;
      background: linear-gradient(to bottom,white, white);
       filter: blur(8px);
   }
@@ -167,6 +168,11 @@
       .oneImageHolder#user img{
         height: 80% !important;
     }
+
+    .Hero{
+   
+    height: 75vh;
+}
    }
 
 
@@ -186,6 +192,10 @@
 }
 
   @media (max-width: 850px) {
+    .Hero{
+   
+    height: 85vh;
+}
     .heroText{
       justify-content: center;
     }

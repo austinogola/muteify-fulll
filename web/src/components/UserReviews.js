@@ -6,30 +6,41 @@ const UserReviews = () => {
     <section className="user-reviews">
       <div className="reviews-header">
         <h2>User Reviews</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis cursus venenatis. <br/>Vivamus nec nisi sit amet leo laoreet viverra.</p>
+        <p>
+          “Mutify has changed the way I watch videos. It allows me to enjoy content without worrying about the music. As a Muslim, this is a huge relief” - Abdullah AK
+        </p>
       </div>
       <div className="reviews-cards">
         <div className="review-card">
-          <div className="card-image" style={{ backgroundImage: "url('/images/1.png')" }}>
+          <div className='cardOverlay'>
+          </div>
+          <div className="card-image" style={{ backgroundImage: "url('/images/happy-black-man.webp')" }}>
+            <div >
+
+            </div>
             <div className="quote">“</div>
-            <p>Finally, an app that helps me protect my ears and soul. Haram Music Mute is exactly what I needed.</p>
-            <button className="play-button">▶</button>
+            <p>Finally, an app that helps me protect my ears and soul. Muteify is exactly what I needed.</p>
+            {/* <button className="play-button">▶</button> */}
           </div>
         </div>
         <div className="review-card active">
-          <div className="card-image" style={{ backgroundImage: "url('/images/2.png')" }}>
+          <div className='cardOverlay'>
+          </div>
+          <div className="card-image" style={{ backgroundImage: "url('/images/man-in-suit1.jpg')" }}>
             <div className="info">
               <h4>Esther Howard</h4>
               <p>Co-Founder of SOFTIE</p>
             </div>
-            <button className="pause-button">⏸</button>
+            {/* <button className="pause-button">⏸</button> */}
           </div>
         </div>
         <div className="review-card">
-          <div className="card-image" style={{ backgroundImage: "url('/images/3.png')" }}>
+        <div className='cardOverlay'>
+          </div>
+          <div className="card-image" style={{ backgroundImage: "url('/images/white-man-cap.jpg')" }}>
             <div className="quote">“</div>
             <p>As someone trying to live a more halal lifestyle, I struggled every day with background music in videos …</p>
-            <button className="play-button">▶</button>
+            {/* <button className="play-button">▶</button> */}
           </div>
         </div>
       </div>

@@ -137,7 +137,11 @@ def get_user_config(current_user):
     today_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
     today_usage_minutes = sum(u["minutes"] for u in usage_records if u["date"] == today_date)
     
-    the_plan_obj = [it for it in ALL_PLANS if it["name"]==plan]
+    print('today_usage_minutes',today_usage_minutes)
+    
+    the_plan_obj = [it for it in ALL_PLANS if it["name"]==plan][0]
+    
+    print(the_plan_obj)
 
     allowed_minutes = the_plan_obj['minutes']  # default to 10 if not found
     
@@ -148,7 +152,7 @@ def get_user_config(current_user):
     "email": user.get("email"),
     "plan": plan,
     "usage_today_minutes": round(today_usage_minutes, 2),
-    "remaining_today_minutes":remaining_minutes,
+    "remaining_minutes_today":remaining_minutes,
     "error":False,
     "success":True
     }) 
@@ -353,7 +357,10 @@ def create_link(current_user):
     
     print(the_account)
     
-    if(the_account and the_account['plan_expiring']):
+    print(the_account["userId"])
+
+    
+    if(the_account and "plan" in the_account and "plan_expiring" in the_account):
         print('EXISTING PLAN, CHEECKING IF EXIRED')
         today = datetime.datetime.today()
         

@@ -38,3 +38,5 @@ yarn-error.log*
 /server
 
 /flask_server/creds.json
+
+/muteify-server-bash

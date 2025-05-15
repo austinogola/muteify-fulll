@@ -1,8 +1,10 @@
 import React from "react";
 import "./PlanPricing.css";
-import fullLogo from '../images/FullLogo.png'
-import mountain from '../images/mount.png'
-import person from '../images/person.png'
+import Cookies from 'js-cookie';
+
+import Loading from "../components/Loading";
+
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 // import WaitPage from "../components/WaitPage";
 
@@ -14,9 +16,60 @@ const features = [
     "Lorem ipsum dolor",
     "Lorem ipsum dolor",
   ];
+
+const googleClientId = process.env.REACT_APP_GOOGLE_ID
+
+let SERVER_URL = process.env.REACT_APP_SERVER_URL
+
+let WEB_URL = process.env.REACT_APP_WEB_URL
+
+
   
 export default function PlanPricing() {
-  return (
+  let mm_token = Cookies.get('mm_token')
+
+  const navigate = useNavigate();
+
+  const handleClick = (e) =>{
+     let productName =  e.target.id
+
+     let currentText = e.target.textContent
+
+    e.target.textContent = 'Redirecting...'
+
+    if(mm_token){
+        fetch(`${SERVER_URL}/stripe/get-link`,{
+        method:'POST',
+        headers:{
+                  "Content-Type":"application/json",
+                  "Authorization":mm_token
+                },
+        body:JSON.stringify({productName})
+      })
+      .then(res=>res.json())
+      .then(res=>{
+        console.log(res)
+        let {payment_url}=res
+
+        if(payment_url){
+          window.location.href = payment_url
+          // navigate(payment_url)
+        }
+      })
+    }else{
+        let searchString=`?redirect=/checkout&productName=${productName}`
+
+        navigate(`/login${searchString}`)
+      
+    }
+
+     e.target.textContent = currentText
+   
+  
+
+    
+  }
+    return (
     <section className="PlanPricing" id='PlanPricing'>
       
       <div className="planText">
@@ -36,7 +89,7 @@ export default function PlanPricing() {
             <span className="currency">£</span>6.99<span className="monthly">/Month</span>
           </p>
           <div className="tryBtnParent">
-              <button className="try-btn">Try For £1</button>
+              <button className="try-btn" id='Basic-Trial' onClick={handleClick}>Try For £1</button>
           </div>
           <div className="features">
             <p className="available"><span className='tick'>✔</span> 45 Minutes Of Usage / Day</p>
@@ -49,10 +102,10 @@ export default function PlanPricing() {
           <div className="badge">Most Popular</div>
           <h2>Premium</h2>
           <p className="price">
-            <span className="currency">£</span>11.9<span className="monthly">/Month</span>
+            <span className="currency">£</span>11.99<span className="monthly">/Month</span>
           </p>
           <div className="tryBtnParent">
-              <button className="try-btn">Try For £1</button>
+              <button className="try-btn" id='Premium-Trial' onClick={handleClick}>Try For £1</button>
           </div>
           
           <div className="features">

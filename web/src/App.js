@@ -13,6 +13,8 @@ import GoOAuth from './pages/GoOAuth';
 
 import Waitlist from './pages/WaitList';
 
+import Checkout from './pages/Checkout';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/oauth-google" element={<GoOAuth />} />
         <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

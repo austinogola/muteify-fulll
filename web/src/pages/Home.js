@@ -16,7 +16,11 @@ export default function Home() {
   return (
     <section>
       <Intro/>
-      {/* <AboutExtension/>
+
+      {true?
+      <div>
+
+        <AboutExtension/>
 
       <HowItWorks/> 
 
@@ -26,7 +30,9 @@ export default function Home() {
 
        <UserReviews/>
       
-      <LastSection/>  */}
+      <LastSection/>
+
+      </div>:null}
 
     </section>
   

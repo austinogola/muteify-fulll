@@ -6,9 +6,13 @@ import Cookies from 'js-cookie';
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {GoogleButton} from 'react-oauth-ninja';
 
-const googleClientId = '420831241197-ipa7a6qggkf7qb4qrcqtkci4ovdti6e8.apps.googleusercontent.com'
+const googleClientId = process.env.REACT_APP_GOOGLE_ID
 
-let redirect_uri=`http://127.0.0.1:3000/oauth-google`
+let SERVER_URL = process.env.REACT_APP_SERVER_URL
+
+let WEB_URL = process.env.REACT_APP_WEB_URL
+
+// let redirect_uri=`http://127.0.0.1:3000/oauth-google`
 export default function Login() {
     // const [cookies, setCookie] = useCookies(["mm_token"]);
     const [email, setEmail] = useState("");
@@ -17,9 +21,22 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const redirectTo = searchParams.get('redirect'); // Get ?redirect=/somepage
+    const productName = searchParams.get('productName')
 
-    let SERVER_URL = 'http://127.0.0.1:5000'
-    // let SERVER_URL = 'https://vocalseparator-production-bf57.up.railway.app'
+
+    // const redirect_uri = `${WEB_URL}/oauth-google${redirectTo ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`;
+    let redirect_uri
+
+    if(redirectTo && redirectTo.length>1){
+        localStorage.setItem('redirectAfterLogin', redirectTo);
+        localStorage.setItem('productName', productName);
+     }
+     
+     redirect_uri = `${WEB_URL}/oauth-google`;
+
+     console.log(redirect_uri)
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -44,8 +61,9 @@ export default function Login() {
       fetch(`${SERVER_URL}/login`,requestObj)
       .then(res=>res.json())
       .then(response=>{
-        setLoading(false)
+        
         if(response.error){
+          setLoading(false)
             setError(response.error)
         }else{
             const mm_token = response.token;
@@ -55,7 +73,31 @@ export default function Login() {
             );
         //   setCookie("mm_token", mm_token, { path: "/", expires: date });
             Cookies.set('mm_token', mm_token, { expires: 21 });
-          navigate(`/success`);
+          // navigate(`/success`);
+          if(redirectTo && redirectTo=='/checkout'){
+              fetch(`${SERVER_URL}/stripe/get-link`,{
+                method:'POST',
+                headers:{
+                  "Content-Type":"application/json",
+                  "Authorization":mm_token
+                },
+                body:JSON.stringify({productName})
+              })
+              .then(res=>res.json())
+              .then(res=>{
+                setLoading(false)
+                let {payment_url}=res
+
+                if(payment_url){
+                  // navigate(payment_url)
+                  window.location.href = payment_url
+                }
+                // console.log(res)
+              })
+          }else{
+            navigate('/success')
+          }
+          // navigate(redirectTo || '/success');
         }
         
       })
@@ -100,7 +142,9 @@ export default function Login() {
                     </div>
 
             <div className="footnote">
-                <p>Don't have an account? <a href="/register">Register</a> </p>
+                <p>Don't have an account? <a href=
+                {`/register${redirectTo ? `?redirect=${(redirectTo)}` : ''}${productName?`&productName=${(productName)}` : ''}`}
+                >Register</a> </p>
             </div>
         </div>
         {loading?<Loading/>:null}

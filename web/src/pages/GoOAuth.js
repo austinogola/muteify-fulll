@@ -5,8 +5,14 @@ import Cookies from 'js-cookie';
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 
+
 const GoOAuth=()=>{
 
+    let SERVER_URL = process.env.REACT_APP_SERVER_URL
+    let WEB_URL = process.env.REACT_APP_WEB_URL
+
+    const redirectTo =localStorage.getItem('redirectAfterLogin');
+       const productName = localStorage.getItem('productName');
     
      const navigate = useNavigate();
 
@@ -14,8 +20,14 @@ const GoOAuth=()=>{
     const [loading, setLoading] = useState(true);
 
 
+     const [searchParams] = useSearchParams();
+        // const redirectTo = searchParams.get('redirect'); // Get ?redirect=/somepage
+        // const productName = searchParams.get('productName')
+
+
+        console.log(redirectTo,productName)
     const makeReq=(obj)=>{
-        let url=`http://127.0.0.1:5000/auth/google`
+        let url=`${SERVER_URL}/auth/google`
         fetch(url,{
             method:'POST',
             headers:{"Content-Type":"application/json"},
@@ -32,7 +44,33 @@ const GoOAuth=()=>{
                         date.getTime() + 21 * 24 * 60 * 60 * 1000
                     );
                     Cookies.set('mm_token', mm_token, { expires: 21 });
-                    navigate(`/success`);
+                    // navigate(`/success`);
+
+                    if(redirectTo && redirectTo=='/checkout'){
+                          localStorage.removeItem('redirectAfterLogin');
+                          localStorage.removeItem('productName');
+                        fetch(`${SERVER_URL}/stripe/get-link`,{
+                            method:'POST',
+                            headers:{
+                            "Content-Type":"application/json",
+                            "Authorization":mm_token
+                            },
+                            body:JSON.stringify({productName})
+                        })
+                        .then(res=>res.json())
+                        .then(res=>{
+                            setLoading(false)
+                            let {payment_url}=res
+
+                            if(payment_url){
+                            // navigate(payment_url)
+                            window.location.href = payment_url
+                            }
+                            // console.log(res)
+                        })
+                    }else{
+                        navigate('/success')
+                    }
                 }
                
             }else{
@@ -55,6 +93,16 @@ const GoOAuth=()=>{
     // console.log(permission);
     const origin = sers.origin
 
+    let redirect_uri = `${WEB_URL}/oauth-google`
+
+    // if(redirectTo && redirectTo.length>1){
+    //     redirect_uri+=`${redirectTo?`?redirect=${redirectTo}`:""}`
+    //     redirect_uri+=`${productName?`&productName=${productName}`:""}`
+    // }
+     
+
+
+
     
     // for (const key in params) {
     //     console.log(`${key}: ${params[key]}`);
@@ -62,7 +110,7 @@ const GoOAuth=()=>{
 
     useEffect(()=>{
         if(code && scope){
-            makeReq({code,scope,origin})
+            makeReq({code,scope,origin,redirect_uri})
         }
     },[code,scope])
     return(

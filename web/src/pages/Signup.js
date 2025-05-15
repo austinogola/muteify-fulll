@@ -2,14 +2,19 @@ import React,{ useState } from "react";
 import "./Signup.css";
 import Loading from "../components/Loading";
 // import { useCookies } from "react-cookie";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams, } from "react-router-dom";
 import Cookies from 'js-cookie';
 import {GoogleButton} from 'react-oauth-ninja';
 
 
-const googleClientId = '420831241197-ipa7a6qggkf7qb4qrcqtkci4ovdti6e8.apps.googleusercontent.com'
+const googleClientId = process.env.REACT_APP_GOOGLE_ID
 
-let redirect_uri=`http://127.0.0.1:3000/oauth-google`
+let SERVER_URL = process.env.REACT_APP_SERVER_URL
+
+let WEB_URL = process.env.REACT_APP_WEB_URL
+
+// let redirect_uri=`http://127.0.0.1:3000/oauth-google`
+
 export default function Signup() {
     // const [cookies, setCookie] = useCookies(["mm_token"]);
     const [email, setEmail] = useState("");
@@ -19,8 +24,24 @@ export default function Signup() {
 
     const navigate = useNavigate();
 
-    let SERVER_URL = 'http://127.0.0.1:5000'
-    //  let SERVER_URL = 'https://vocalseparator-production-bf57.up.railway.app'
+    const [searchParams] = useSearchParams();
+    const redirectTo = searchParams.get('redirect'); // Get ?redirect=/somepage
+    const productName = searchParams.get('productName')
+
+    console.log('redirectTo',redirectTo)
+     console.log('productName',productName)
+
+
+
+     let redirect_uri = ''
+
+     if(redirectTo && redirectTo.length>1){
+        localStorage.setItem('redirectAfterLogin', redirectTo);
+        localStorage.setItem('productName', productName);
+     }
+     
+     redirect_uri = `${WEB_URL}/oauth-google`;
+
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -45,8 +66,9 @@ export default function Signup() {
       fetch(`${SERVER_URL}/signup`,requestObj)
       .then(res=>res.json())
       .then(response=>{
-        setLoading(false)
+        // setLoading(false)
         if(response.error){
+          setLoading(false)
             setError(response.error)
         }else{
 
@@ -58,7 +80,31 @@ export default function Signup() {
             // setCookie("mm_token", mm_token, { path: "/", expires: date });
             Cookies.set('mm_token', mm_token, { expires: 21 });
 
-            navigate(`/success`);
+          if(redirectTo && redirectTo=='/checkout'){
+              fetch(`${SERVER_URL}/stripe/get-link`,{
+                method:'POST',
+                headers:{
+                  "Content-Type":"application/json",
+                  "Authorization":mm_token
+                },
+                body:JSON.stringify({productName})
+              })
+              .then(res=>res.json())
+              .then(res=>{
+                setLoading(false)
+                let {payment_url}=res
+
+                if(payment_url){
+                  // navigate(payment_url)
+                  window.location.href = payment_url
+                }
+                // console.log(res)
+              })
+          }else{
+            navigate('/success')
+          }
+
+            // navigate(`/success`);
 
         }
         
@@ -105,7 +151,9 @@ export default function Signup() {
          
 
           <div className="footnote">
-                <p>Already have an account? <a href="/login">Login</a> </p>
+                <p>Already have an account? <a href=
+                {`/login${redirectTo ? `?redirect=${(redirectTo)}` : ''}${productName?`&productName=${(productName)}` : ''}`}
+                >Login</a> </p>
             </div>
         </div>
         {loading?<Loading/>:null}

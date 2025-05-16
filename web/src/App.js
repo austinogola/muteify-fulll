@@ -15,6 +15,10 @@ import Waitlist from './pages/WaitList';
 
 import Checkout from './pages/Checkout';
 
+import PrivacyPolicy from './pages/PrivacyPolicy';
+
+import TermsOfService from './pages/TermsOfService';
+
 function App() {
   return (
     <Router>
@@ -25,7 +29,9 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/oauth-google" element={<GoOAuth />} />
         <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Routes>
     </Router>
   );

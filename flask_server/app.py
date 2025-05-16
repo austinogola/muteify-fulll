@@ -28,6 +28,8 @@ SECRET_KEY = os.getenv("SECRET_KEY", "your_secret_key")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 
+SOUND_SERVER = os.getenv("SOUND_SERVER")
+
 ENV_MODE = os.getenv("ENV_MODE")
 
 webhook_secret = os.getenv('STRIPE_WEBHOOK_SECRET')
@@ -129,7 +131,8 @@ def get_user_config(current_user):
         "email": user.get("email"),
         "plan": plan,
         "error":True,
-        "success":False
+        "success":False,
+        "sound_server":SOUND_SERVER
         })
         
     usage_records = account.get("usage", [])
@@ -154,7 +157,8 @@ def get_user_config(current_user):
     "usage_today_minutes": round(today_usage_minutes, 2),
     "remaining_minutes_today":remaining_minutes,
     "error":False,
-    "success":True
+    "success":True,
+    "sound_server":SOUND_SERVER
     }) 
 
 
@@ -558,6 +562,9 @@ def webhook():
     
     return jsonify({"message":"DONE"})
 
+@app.route('/get_duration/<video_id>', methods=['GET'])
+def get_audio_duration(video_id):
+    return redirect(f'http://213.173.105.105:10250/get_duration/{video_id}')
 
 @app.route("/separate/partial/YT", methods=["POST"])
 @token_required
@@ -583,7 +590,7 @@ def partialSeparateYoutubeAudio(current_user):
     today_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
     today_usage_minutes = sum(u["minutes"] for u in usage_records if u["date"] == today_date)
     
-    the_plan_obj = [it for it in ALL_PLANS if it["name"]==plan]
+    the_plan_obj = [it for it in ALL_PLANS if it["name"]==plan][0]
 
     allowed_minutes = the_plan_obj['minutes']  # default to 10 if not found
     
@@ -605,6 +612,8 @@ def partialSeparateYoutubeAudio(current_user):
         video_id = videoUrl.split("v=")[-1] if "v=" in videoUrl else videoUrl.split("/")[-1]
     else:
         return jsonify({"error": "Invalid YouTube URL or ID"}), 400
+    
+    return redirect(f'http://213.173.105.105:10250/separate/partial/YT?videoUrl={videoUrl}&start={start}&end={end}')
     
 
     

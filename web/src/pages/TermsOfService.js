@@ -1,7 +1,7 @@
 import React from 'react';
 import './TermsOfService.css';
 
-const TermsOfService = () => {
+export default function TermsOfService () {
   return (
     <div className="tos-container">
       <h1>Terms of Service</h1>
@@ -98,4 +98,3 @@ const TermsOfService = () => {
   );
 };
 
-export default TermsOfService;

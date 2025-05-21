@@ -3,9 +3,15 @@ import './TermsOfService.css';
 
 export default function TermsOfService () {
   return (
+    <div className='tos-parent'>
+    <div className='header-section'>
+      <div>
+         <h1>Terms of Service</h1>
+      </div>
+    </div>
     <div className="tos-container">
-      <h1>Terms of Service</h1>
-      <p><strong>Effective Date:</strong> [Insert Date]</p>
+      
+      <p><strong>Effective Date:</strong> 17/May/2025</p>
 
       <section>
         <h2>1. Acceptance of Terms</h2>
@@ -87,13 +93,15 @@ export default function TermsOfService () {
         <h2>11. Contact Information</h2>
         <p>If you have any questions about these Terms, please contact us:</p>
         <ul>
-          <li><strong>Email:</strong> your-email@example.com</li>
-          <li><strong>Developer:</strong> [Your Name or Company Name]</li>
-          <li><strong>Address:</strong> [Optional / Required if legally applicable]</li>
+          <li><strong>Email:</strong> support@muteify.com</li>
+          {/* <li><strong>Developer:</strong> [Your Name or Company Name]</li>
+          <li><strong>Address:</strong> [Optional / Required if legally applicable]</li> */}
         </ul>
       </section>
 
       <p>By using this Extension, you agree to comply with these Terms of Service.</p>
+    </div>
+
     </div>
   );
 };

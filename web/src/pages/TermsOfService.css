@@ -1,13 +1,27 @@
+.tos-parent{
+  
+}
+
+.header-section{
+   background: radial-gradient(circle at bottom right, #fdf1eb 0%, white 60%, #fdf1eb 100%);
+   min-height: 200px;
+   display: flex;
+   align-items: flex-end;
+   padding: 40px;
+   
+}
+
 .tos-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  /* max-width: 800px; */
+  /* margin: 40px auto; */
+  padding: 40px;
+  /* font-family: Arial, sans-serif; */
   line-height: 1.6;
   background-color: #fff;
   color: #333;
   border: 1px solid #ccc;
   border-radius: 6px;
+ 
 }
 
 .tos-container h1 {

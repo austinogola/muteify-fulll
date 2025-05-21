@@ -3,9 +3,15 @@ import './PrivacyPolicy.css';
 
 export default function PrivacyPolicy () {
   return (
+    <div className='privacy-parent'>
+      <div className='header-section'>
+        <div>
+          <h1>Privacy Policy</h1>
+        </div>
+      </div>
     <div className="privacy-container">
-      <h1>Privacy Policy</h1>
-      <p><strong>Effective Date:</strong> [Insert Date]</p>
+      
+      <p ><strong>Effective Date:</strong> 17/May/2025</p>
 
       <section>
         <h2>1. Information We Collect</h2>
@@ -81,14 +87,15 @@ export default function PrivacyPolicy () {
         <h2>7. Contact Information</h2>
         <p>If you have any questions or requests regarding this Privacy Policy, please contact us:</p>
         <ul>
-          <li><strong>Email:</strong> your-email@example.com</li>
-          <li><strong>Developer:</strong> [Your Name or Company Name]</li>
-          <li><strong>Address:</strong> [Optional / Required based on jurisdiction]</li>
+          <li><strong>Email:</strong> support@muteify.com</li>
+          {/* <li><strong>Developer:</strong> [Your Name or Company Name]</li> */}
+          {/* <li><strong>Address:</strong> [Optional / Required based on jurisdiction]</li> */}
         </ul>
       </section>
 
       <p>By using this Extension, you agree to the terms outlined in this Privacy Policy.</p>
     </div>
+     </div>
   );
 };
 

@@ -107,6 +107,7 @@ def token_required(f):
         return f(current_user, *args, **kwargs)
     return decorated
 
+
 @app.route('/config', methods=['GET'])
 @token_required
 def get_user_config(current_user):
@@ -564,7 +565,11 @@ def webhook():
 
 @app.route('/get_duration/<video_id>', methods=['GET'])
 def get_audio_duration(video_id):
-    return redirect(f'http://213.173.105.105:10250/get_duration/{video_id}')
+    return redirect(f'{SOUND_SERVER}/get_duration/{video_id}')
+
+@app.route('/download/<video_url>', methods=['GET'])
+def download(video_url):
+    return redirect(f'{SOUND_SERVER}/download/{video_url}')
 
 @app.route("/separate/partial/YT", methods=["POST"])
 @token_required
@@ -613,7 +618,7 @@ def partialSeparateYoutubeAudio(current_user):
     else:
         return jsonify({"error": "Invalid YouTube URL or ID"}), 400
     
-    return redirect(f'http://213.173.105.105:10250/separate/partial/YT?videoUrl={videoUrl}&start={start}&end={end}')
+    return redirect(f'{SOUND_SERVER}/separate/partial/YT?videoUrl={videoUrl}&start={start}&end={end}')
     
 
     

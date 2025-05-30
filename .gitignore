@@ -41,5 +41,6 @@ yarn-error.log*
 
 /muteify-server-bash
 /vocal_server
+/download_extension
 
 **zip

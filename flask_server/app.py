@@ -610,7 +610,12 @@ def partialSeparateYoutubeAudio(current_user):
     requested_duration_seconds = (end - start) / 1000.0
     requested_duration_minutes = requested_duration_seconds / 60.0
     
-    if today_usage_minutes + requested_duration_minutes > allowed_minutes:
+    print('allowed_minutes',allowed_minutes)
+    print('total after granting this',today_usage_minutes + requested_duration_minutes)
+    
+    print('NOT allowed',((today_usage_minutes + requested_duration_minutes) > allowed_minutes))
+    
+    if (today_usage_minutes + requested_duration_minutes) > allowed_minutes:
         return jsonify({"error":True,"message": "Daily usage limit exceeded"}), 403
     
     if "youtube.com" in videoUrl or "youtu.be" in videoUrl:
